@@ -1,4 +1,11 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import {
+  APP_INITIALIZER,
+  ApplicationConfig,
+  PLATFORM_ID,
+  inject,
+  provideBrowserGlobalErrorListeners,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import {
   provideRouter,
   withHashLocation,
@@ -10,8 +17,22 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideTanStackQuery, QueryClient } from '@tanstack/angular-query-experimental';
 import { provideToastr } from 'ngx-toastr';
-import { provideTranslateService } from '@ngx-translate/core';
+import { TranslateService, provideTranslateService } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
+import { CookieService } from 'ngx-cookie-service';
+
+function languageInitializer() {
+  const translate = inject(TranslateService);
+  const cookieService = inject(CookieService);
+
+  return () => {
+    const lang = cookieService.get('lang') || 'en';
+
+    translate.addLangs(['en', 'ar']);
+    translate.setDefaultLang(lang);
+    translate.use(lang);
+  };
+}
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -48,7 +69,11 @@ export const appConfig: ApplicationConfig = {
         suffix: '.json',
       }),
       fallbackLang: 'en',
-      lang: 'en',
     }),
+    {
+      provide: APP_INITIALIZER,
+      useFactory: languageInitializer,
+      multi: true,
+    },
   ],
 };
