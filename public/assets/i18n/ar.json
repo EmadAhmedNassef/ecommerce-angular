@@ -1,0 +1,20 @@
+{
+  "login": {
+    "title": "مرحبًا بعودتك!",
+    "subtitle": "سجّل الدخول لمتابعة تجربة التسوق الطازجة الخاصة بك",
+    "emailLabel": "البريد الإلكتروني",
+    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "emailRequired": "البريد الإلكتروني مطلوب",
+    "emailInvalid": "البريد الإلكتروني غير صالح",
+    "passwordLabel": "كلمة المرور",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "passwordRequired": "كلمة المرور مطلوبة",
+    "forgotPassword": "هل نسيت كلمة المرور؟",
+    "submit": "تسجيل الدخول",
+    "loggingInTitle": "برجاء الانتظار",
+    "loggingInMessage": "جاري تسجيل الدخول...",
+    "loginSuccessTitle": "تم بنجاح",
+    "loginSuccessMessage": "تم تسجيل الدخول بنجاح",
+    "loginErrorTitle": "خطأ"
+  }
+}

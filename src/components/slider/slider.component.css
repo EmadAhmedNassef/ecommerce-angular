@@ -1,0 +1,35 @@
+.item {
+  background-image:
+    linear-gradient(to right, #00c758e6, #05df7280), url(/assets/home-slider-1.d79601a8.png);
+  background-size: cover;
+  background-position: center;
+}
+
+/* External pagination bullets — must use ::ng-deep because bullets
+   are injected into the light DOM (.slider-pagination), not the shadow DOM */
+
+.slider-pagination {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(6px);
+}
+
+::ng-deep .slider-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.55);
+
+  transition:
+    width 0.25s ease,
+    background-color 0.25s ease;
+}
+
+::ng-deep .slider-pagination .swiper-pagination-bullet-active {
+  width: 34px;
+  background: #ffffff;
+}

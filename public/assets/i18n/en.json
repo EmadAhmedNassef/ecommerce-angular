@@ -1,0 +1,20 @@
+{
+  "login": {
+    "title": "Welcome Back!",
+    "subtitle": "Sign in to continue your fresh shopping experience",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email address",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "passwordRequired": "Password is required",
+    "forgotPassword": "Forgot Password?",
+    "submit": "Sign In",
+    "loggingInTitle": "Please wait",
+    "loggingInMessage": "Logging in...",
+    "loginSuccessTitle": "Success",
+    "loginSuccessMessage": "Login successful",
+    "loginErrorTitle": "Error"
+  }
+}

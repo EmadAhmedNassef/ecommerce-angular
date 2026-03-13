@@ -1,0 +1,43 @@
+<div class="relative inline-block text-left">
+  <button
+    id="lang-menu-button"
+    data-dropdown-toggle="lang-dropdown"
+    type="button"
+    class="inline-flex items-center gap-1 rounded-md border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-mainColor/60"
+  >
+    <span class="uppercase">{{ translate.getCurrentLang() || 'en' }}</span>
+    <svg
+      class="h-4 w-4 text-slate-500"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M5.23 7.21a.75.75 0 011.06.02L10 11.084l3.71-3.854a.75.75 0 111.08 1.04l-4.25 4.417a.75.75 0 01-1.08 0L5.25 8.27a.75.75 0 01-.02-1.06z"
+        clip-rule="evenodd"
+      />
+    </svg>
+  </button>
+
+  <div
+    id="lang-dropdown"
+    class="z-20 hidden mt-1 w-28 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none"
+  >
+    <button
+      type="button"
+      (click)="changeLang('en')"
+      class="block w-full px-3 py-1.5 text-left text-sm hover:bg-slate-100"
+    >
+      EN
+    </button>
+    <button
+      type="button"
+      (click)="changeLang('ar')"
+      class="block w-full px-3 py-1.5 text-left text-sm hover:bg-slate-100"
+    >
+      AR
+    </button>
+  </div>
+</div>
