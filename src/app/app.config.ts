@@ -17,24 +17,9 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideTanStackQuery, QueryClient } from '@tanstack/angular-query-experimental';
 import { provideToastr } from 'ngx-toastr';
-import { TranslateLoader, TranslateService, provideTranslateService } from '@ngx-translate/core';
+import { TranslateService, provideTranslateService } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CookieService } from 'ngx-cookie-service';
-import { TranslateTransferLoader } from '../core/translate-transfer.loader';
-
-function languageInitializer() {
-  const translate = inject(TranslateService);
-  const cookieService = inject(CookieService);
-
-  return () => {
-    const lang = cookieService.get('lang') || 'en';
-
-    translate.addLangs(['en', 'ar']);
-    translate.setDefaultLang(lang);
-
-    return translate.use(lang).toPromise();
-  };
-}
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -66,16 +51,11 @@ export const appConfig: ApplicationConfig = {
       progressBar: true,
     }),
     provideTranslateService({
-      loader: {
-        provide: TranslateLoader,
-        useClass: TranslateTransferLoader,
-      },
+      loader: provideTranslateHttpLoader({
+        prefix: '/assets/i18n/',
+        suffix: '.json',
+      }),
       fallbackLang: 'en',
     }),
-    {
-      provide: APP_INITIALIZER,
-      useFactory: languageInitializer,
-      multi: true,
-    },
   ],
 };
