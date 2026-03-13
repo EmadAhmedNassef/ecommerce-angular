@@ -30,7 +30,12 @@ function languageInitializer() {
 
     translate.addLangs(['en', 'ar']);
     translate.setDefaultLang(lang);
-    translate.use(lang);
+
+    return new Promise<void>((resolve) => {
+      translate.use(lang).subscribe(() => {
+        resolve();
+      });
+    });
   };
 }
 
