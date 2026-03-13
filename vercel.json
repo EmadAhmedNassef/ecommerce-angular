@@ -1,15 +1,14 @@
 {
-  "version": 2,
-  "public": true,
-  "rewrites": [
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "/api"
+      "src": "dist/ecommerce-angular/server/server.mjs",
+      "use": "@vercel/node"
     }
   ],
-  "functions": {
-    "api/index.js": {
-      "includeFiles": "dist/ecommerce-angular/server/**/*"
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/ecommerce-angular/server/server.mjs"
     }
-  }
+  ]
 }
