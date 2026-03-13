@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "dist/ecommerce-angular/server/server.mjs",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/ecommerce-angular/server/server.mjs"
+    }
+  ]
+}
