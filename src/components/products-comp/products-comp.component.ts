@@ -38,15 +38,20 @@ import { ProductsService } from '../../core/services/products.service';
 import { RouterLink } from '@angular/router';
 import { injectQuery } from '@tanstack/angular-query-experimental';
 import { lastValueFrom } from 'rxjs';
+import { BarRatingModule } from 'ngx-bar-rating';
 
 @Component({
   selector: 'app-products-comp',
-  imports: [RouterLink],
+  imports: [RouterLink, BarRatingModule],
   templateUrl: './products-comp.component.html',
   styleUrl: './products-comp.component.css',
 })
 export class ProductsCompComponent {
   private productsService = inject(ProductsService);
+
+  onRateChange(event: number) {
+    console.log(event);
+  }
 
   productsQuery = injectQuery(() => ({
     queryKey: ['products'],

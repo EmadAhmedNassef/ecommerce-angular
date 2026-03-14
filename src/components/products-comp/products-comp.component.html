@@ -64,20 +64,27 @@
                 {{ product.title }}
               </h3>
 
-              <div class="flex items-center gap-1">
-                <div class="flex text-yellow-400 text-xs gap-0.5">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="far fa-star text-gray-300"></i>
-                </div>
-                <span class="text-xs text-gray-400 font-medium">
-                  {{ product.ratingsAverage }} ({{ product.ratingsQuantity }})</span
+              <div class="flex items-center gap-2">
+                <bar-rating
+                  effect
+                  [rate]="product.ratingsAverage"
+                  [max]="5"
+                  [readonly]="true"
+                  [showText]="false"
+                  (rateChange)="onRateChange($event)"
+                  [titles]="['سيئ', 'مقبول', 'جيد', 'جيد جدًا', 'ممتاز']"
                 >
+                  <i *ratingInactive class="far fa-star" style="margin: 2px; color: #d2d2d2"></i>
+                  <i *ratingActive class="fas fa-star" style="margin: 2px; color: #22c55e"></i>
+                  <i
+                    *ratingFraction
+                    class="fas fa-star-half-alt"
+                    style="margin: 2px; color: #22c55e"
+                  ></i>
+                </bar-rating>
                 <span class="text-xs text-gray-400 font-medium">
-                  {{ product.ratingsAverage }} ({{ product.ratingsQuantity }})</span
-                >
+                  {{ product.ratingsAverage }} ({{ product.ratingsQuantity }})
+                </span>
               </div>
 
               <div class="flex items-center justify-between pt-2">

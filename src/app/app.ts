@@ -6,10 +6,23 @@ import { TopnavbarComponent } from '../components/tonavbar/topnavbar.component';
 import { MyTranslateService } from '../core/services/my-translate.service';
 import { TranslateService } from '@ngx-translate/core';
 import { CookieService } from 'ngx-cookie-service';
+import { NgxScrollTopComponent } from 'ngx-scrolltop';
+import { NgProgressbar } from 'ngx-progressbar';
+import { NgProgressRouter } from 'ngx-progressbar/router';
+import { NgProgressHttp } from 'ngx-progressbar/http';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TopnavbarComponent, NavbarComponent, FooterComponent],
+  imports: [
+    RouterOutlet,
+    TopnavbarComponent,
+    NavbarComponent,
+    FooterComponent,
+    NgxScrollTopComponent,
+    NgProgressbar,
+    NgProgressRouter,
+    NgProgressHttp,
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

@@ -1,6 +1,16 @@
+<ng-progress ngProgressRouter ngProgressHttp />
 <app-topnavbar />
 <app-navbar />
 <main class="max-w-7xl mx-auto">
   <router-outlet />
 </main>
 <app-footer />
+<ngx-scrolltop
+  [backgroundColor]="'#212121'"
+  [symbolColor]="'#fafafa'"
+  [size]="40"
+  [mode]="'classic'"
+  position="right"
+  theme="gray"
+>
+</ngx-scrolltop>
