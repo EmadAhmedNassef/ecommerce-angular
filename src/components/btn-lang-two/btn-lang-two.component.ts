@@ -7,8 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './btn-lang-two.component.css',
 })
 export class BtnLangTwoComponent {
+  /** متوافق مع angular.json: sourceLocale baseHref "" و ar baseHref "ar" */
   locallists = [
     { code: 'en-US', name: 'English' },
     { code: 'ar', name: 'Arabic' },
+    // { path: '/', name: 'English' },
+    // { path: '/ar/', name: 'Arabic' },
   ];
 }

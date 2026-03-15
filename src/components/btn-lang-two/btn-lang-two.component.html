@@ -1,7 +1,7 @@
 <ul>
   @for (locale of locallists; track locale.code) {
     <li>
-      <a [href]="'/' + locale.code + '/'">{{ locale.name }}</a>
+      <a href="/{{ locale.code }}/">{{ locale.name }}</a>
     </li>
   }
 </ul>

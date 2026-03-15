@@ -9,9 +9,13 @@
     "ecommerce-angular": {
       "projectType": "application",
       "i18n": {
-        "sourceLocale": "en-US",
+        "sourceLocale": {
+          "code": "en-US"
+        },
         "locales": {
-          "ar": "public/localization/messages.ar.xlf"
+          "ar": {
+            "translation": "public/localization/messages.ar.xlf"
+          }
         }
       },
       "schematics": {
@@ -66,6 +70,8 @@
               "localize": ["ar"]
             },
             "production": {
+              "localize": true,
+              "i18nMissingTranslation": "ignore",
               "budgets": [
                 {
                   "type": "initial",
