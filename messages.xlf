@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="7260820824603583547" datatype="html">
+        <source> Welcome to <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;text-green-600&quot;&gt;"/>FreshCart<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/register/register.component.html</context>
+          <context context-type="linenumber">7,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5678497592815171833" datatype="html">
+        <source> Join thousands of happy customers who enjoy fresh groceries delivered right to their doorstep. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/pages/register/register.component.html</context>
+          <context context-type="linenumber">10,11</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

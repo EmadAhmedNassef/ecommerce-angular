@@ -6,10 +6,11 @@ import { AuthService } from '../../core/services/auth.service';
 import { isPlatformBrowser } from '@angular/common';
 import { BtnLang } from '../btn-lang/btn-lang';
 import { CookieService } from 'ngx-cookie-service';
+import { BtnLangTwoComponent } from '../btn-lang-two/btn-lang-two.component';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink, RouterLinkActive, BtnLang],
+  imports: [RouterLink, RouterLinkActive, BtnLang, BtnLangTwoComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })

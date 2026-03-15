@@ -8,6 +8,12 @@
   "projects": {
     "ecommerce-angular": {
       "projectType": "application",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "ar": "public/localization/messages.ar.xlf"
+        }
+      },
       "schematics": {
         "@schematics/angular:component": {
           "type": "component"
@@ -52,9 +58,13 @@
             },
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "polyfills": ["@angular/localize/init"]
           },
           "configurations": {
+            "ar": {
+              "localize": ["ar"]
+            },
             "production": {
               "budgets": [
                 {
@@ -92,6 +102,9 @@
             },
             "development": {
               "buildTarget": "ecommerce-angular:build:development"
+            },
+            "ar": {
+              "buildTarget": "ecommerce-angular:build:development,ar"
             }
           },
           "defaultConfiguration": "development"

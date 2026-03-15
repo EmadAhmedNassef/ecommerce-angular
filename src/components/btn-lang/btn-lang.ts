@@ -9,10 +9,9 @@ import { MyTranslateService } from '../../core/services/my-translate.service';
   styleUrl: './btn-lang.css',
 })
 export class BtnLang {
-  private myTranslate = inject(MyTranslateService);
-  translate = inject(TranslateService);
-
-  changeLang(lang: string): void {
-    this.myTranslate.changeLang(lang);
-  }
+  // private myTranslate = inject(MyTranslateService);
+  // translate = inject(TranslateService);
+  // changeLang(lang: string): void {
+  //   this.myTranslate.changeLang(lang);
+  // }
 }

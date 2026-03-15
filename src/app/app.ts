@@ -31,13 +31,13 @@ export class App {
   private translateService = inject(TranslateService);
   private cookieService = inject(CookieService);
 
-  constructor() {
-    this.translateService.addLangs(['en', 'ar']);
-    if (this.cookieService.get('lang')) {
-      this.translateService.use(this.cookieService.get('lang'));
-    } else {
-      this.translateService.use('en');
-    }
-    this.myTranslateService.changeDir();
-  }
+  // constructor() {
+  //   this.translateService.addLangs(['en', 'ar']);
+  //   if (this.cookieService.get('lang')) {
+  //     this.translateService.use(this.cookieService.get('lang'));
+  //   } else {
+  //     this.translateService.use('en');
+  //   }
+  //   this.myTranslateService.changeDir();
+  // }
 }
